@@ -1,0 +1,30 @@
+<tr>
+    <td style="background-color: white;"> &nbsp;</td>
+    <td style="background-color: #CC9933;">
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <small>
+          <a href="trangdau.html">Trang chủ</a>
+          <a href="dangky.php">Đăng ký</a>
+          <?php
+          if(isset($_SESSION['user_id']) and (substr($_SERVER['PHP_SELF'], -10) !='logout.php')) {
+            echo "<a href='logout.php'>Thoát ra</a>";
+          } else {
+            echo "<a href='dangnhap.php'>Đăng nhập</a>";
+          }
+          ?>
+          <a href="loggedin.php">Thay đổi mật khẩu</a>
+          <a href="xemnguoidung.php">Xem người dùng</a>
+        </small>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: white;">&nbsp;</td>
+    <td style="background-color: grey;">
+      <div style="display: flex; justify-content: center; align-items: center;">&copy; 2023 Đoàn Nam Dương</div>
+    </td>
+  </tr>
+  </table>
+  </body>
+  </html>
+  

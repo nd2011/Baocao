@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>font</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body id="font-face" style="border-radius: 10px;">
+
+    <table class="me1">
+        <tr style="background-color: grey;">
+            <td rowspan="2" class="font_vientren" ><img class="font_vientren img" src="BOOK.png" alt="logo" ></td>
+            <td>
+                    <font class="font_vien_tren">
+                        <strong> WEBSITE: Hệ Thống Bán Sách</strong>
+                    </font>
+            </td>
+        </tr>
+        <tr>
+            <td style="background-color: #CC9933;">
+                <table style="border-collapse: separate; border-spacing: 10px;">
+                    <tr>
+                        <div class="thanh_menu">
+                        <td>
+                            <td class="con1" > 
+                                <a href="trangchu.php"> Trang chủ </a>
+                            </td>
+                            <td class="con1"> 
+                                <a href="sach.php"> Sách </a>
+						</td>
+                            <td class="con1"> 
+                                <a href="dangky.php"> Đăng ký </a>
+                        </td>
+                        <td class="con1"> 
+							<?php
+								
+								if(isset($_SESSION['user_id']) and (substr($_SERVER['PHP_SELF'], -10) !='logout.php')) {
+									echo "<a href='thoat.php'> Thoát ra </a>";
+								}else echo "<a href='dangnhap.php'> Đăng nhập &#x25cf;</a>";
+							?>
+                        <td class="con2" > 
+							<a href="thaydoimatkhau.php"> Thay đổi mật khẩu </a>
+						</td>
+						<td class="con2" > 
+							<a href="nguoidung.php"> Xem người dùng </a>
+						</td>
+                        </div>
+                    </tr>
+                </table>
+            </td>
+    </tr>
+</table>
+<div ->
+    <div>
+        <span id="hours"></span>:
+        <span id="minutes"></span>:
+        <span id="seconds"></span>
+      </div>
+      
+      <script>
+        function clock(){
+          var hours = document.getElementById('hours');
+          var minutes = document.getElementById('minutes');
+          var seconds = document.getElementById('seconds');
+    
+          var date = new Date(); // lấy thời gian hiện tại của hệ thống
+          var h = date.getHours(); // giờ hiện tại
+          var m = date.getMinutes(); // phút hiện tại
+          var s = date.getSeconds(); // giây hiện tại
+    
+          // cập nhật giá trị của các phần tử HTML để hiển thị thời gian hiện tại
+          hours.innerHTML = h;
+          minutes.innerHTML = m;
+          seconds.innerHTML = s;
+          
+          // chạy lại hàm này sau mỗi giây để cập nhật thời gian
+          setTimeout(clock, 1000);
+        }
+    
+        // gọi hàm để bắt đầu hiển thị thời gian
+        clock();
+      </script>
+</div>
