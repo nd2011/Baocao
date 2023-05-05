@@ -1,0 +1,32 @@
+CREATE TABLE books (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(100) NOT NULL,
+    author VARCHAR(50) NOT NULL,
+    publisher VARCHAR(50) NOT NULL,
+    price INT(10) NOT NULL
+)
+CREATE TABLE users(
+	user_id MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	username VARCHAR(15) NOT NULL,
+  	first_name VARCHAR(15) NOT NULL,
+    last_name VARCHAR(30) NOT NULL, 
+    email VARCHAR(30),
+    password CHAR(100) NOT NULL,
+    registration_date DATETIME NOT NULL,
+    PRIMARY KEY (User_id)
+);
+CREATE TABLE products (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    price DECIMAL(10, 2) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+CREATE TABLE orders (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_name VARCHAR(255) NOT NULL,
+    customer_email VARCHAR(255) NOT NULL,
+    total_price DECIMAL(10, 2) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
